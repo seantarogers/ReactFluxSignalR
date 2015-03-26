@@ -1,0 +1,36 @@
+﻿@model TModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <div>
+              
+        </div>
+        
+        <script type="text/javascript">
+            var ReactTransitionGroup = React.addons.CSSTransitionGroup;
+
+            var HelloWorld = React.createClass({
+                displayName: "HelloWorld",
+                render: function () {
+                    return (
+                      React.createElement(ReactTransitionGroup, { transitionName: "example", transitionAppear: true },
+                          React.createElement("h1", null, "Hello world")
+                      )
+                    );
+                }
+            });
+
+            React.render(React.createElement(HelloWorld, null), document.body);
+
+        </script>
+    </body>
+</html>
