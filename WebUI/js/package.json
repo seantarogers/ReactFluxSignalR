@@ -14,9 +14,13 @@
   },
   "devDependencies": {
     "browserify": "^9.0.3",
+    "concat": "^1.0.0",
     "gulp": "^3.8.11",
+    "jest": "^0.1.39",
+    "jshint": "^2.6.3",
     "keymirror": "^0.1.1",
     "object-assign": "^2.0.0",
+    "uglify": "^0.1.1",
     "watchify": "^2.6.2"
   },
   "scripts": {
