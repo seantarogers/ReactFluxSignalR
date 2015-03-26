@@ -1,10 +1,10 @@
 {
-  "name": "flux",
+  "name": "ReactFluxSignalR",
   "version": "0.0.1",
-  "description": "A simple TODOS app in React and Flux",
-  "author": "Ben Grunfeld",
-  "repository": "https://github.com/bengrunfeld/flux-react-todos",
-  "readme": "https://github.com/bengrunfeld/flux-react-todos/README.md",
+  "description": "A Financial Quoting prototype using React, Flux and SignalR",
+  "author": "Sean Rogers",
+  "repository": "https://github.com/seantarogers/ReactFluxSignalR",
+  "readme": "https://github.com/seantarogers/ReactFluxSignalR/README.md",
   "license": "Apache 2",
   "devDependencies": {
     "es6-promise": "^1.0.0",
