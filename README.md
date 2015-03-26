@@ -4,6 +4,8 @@ A financial quoting prototype SPA implemented using ReactJs following the Flux a
 Installation
 ------------
 
+cd to ..ReactFluxSignalR\WebUI\js then
+
 ```sh
 npm install 
 ```
