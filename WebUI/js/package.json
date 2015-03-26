@@ -6,7 +6,6 @@
   "dependencies": {
     "es6-promise": "^2.0.1",
     "flux": "^2.0.1",
-    "gulp": "^3.8.11",
     "keymirror": "^0.1.1",
     "object-assign": "^2.0.0",
     "react": "^0.13.1",
@@ -18,8 +17,6 @@
     "gulp": "^3.8.11",
     "jest": "^0.1.39",
     "jshint": "^2.6.3",
-    "keymirror": "^0.1.1",
-    "object-assign": "^2.0.0",
     "uglify": "^0.1.1",
     "watchify": "^2.6.2"
   },
