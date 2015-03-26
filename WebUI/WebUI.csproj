@@ -255,6 +255,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+    <Content Include="js\package.json" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>

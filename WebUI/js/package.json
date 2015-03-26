@@ -1,0 +1,41 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "A financial quoting prototype using ReactJs, Flux and SignalR",
+  "main": "app.js",
+  "dependencies": {
+    "es6-promise": "^2.0.1",
+    "flux": "^2.0.1",
+    "gulp": "^3.8.11",
+    "keymirror": "^0.1.1",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.1",
+    "react-mini-router": "^1.1.1"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "keymirror": "^0.1.1",
+    "object-assign": "^2.0.0",
+    "watchify": "^2.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seantarogers/ReactFluxSignalR"
+  },
+  "keywords": [
+    "ReactJs",
+    "Flux",
+    "SignalR",
+    "WebApi"
+  ],
+  "author": "Sean Rogers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seantarogers/ReactFluxSignalR/issues"
+  },
+  "homepage": "https://github.com/seantarogers/ReactFluxSignalR"
+}
