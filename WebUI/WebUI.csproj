@@ -212,7 +212,6 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="build\package.json" />
-    <Content Include="package.json" />
     <Content Include="Areas\RouteDebugger\Views\Web.config" />
     <Content Include="Areas\RouteDebugger\Views\RouteDebugger\Index.cshtml" />
     <None Include="js\jquery-1.10.2.intellisense.js" />
