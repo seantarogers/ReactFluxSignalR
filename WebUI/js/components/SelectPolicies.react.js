@@ -1,6 +1,6 @@
 ﻿var React = require('react');
 var SelectPoliciesTableRow = require('../components/SelectPoliciesTableRow.react');
-
+//dasdasdasdasd
 //todo get initial data from api
 var SelectPolicies = React.createClass({
     displayName: "SelectPolicies.react",
@@ -70,4 +70,3 @@ var SelectPolicies = React.createClass({
 });
 
 module.exports = SelectPolicies;
-

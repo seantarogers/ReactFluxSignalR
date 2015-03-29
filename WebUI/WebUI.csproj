@@ -196,7 +196,11 @@
     <Content Include="js\actions\QuoteActions.js" />
     <Content Include="js\actions\SelectPoliciesActions.js" />
     <Content Include="js\app.js" />
-    <Content Include="js\bundle.js" />
+    <Content Include="js\build\.jscsrc" />
+    <Content Include="js\build\.jshintrc" />
+    <Content Include="js\build\dist\bundle.js" />
+    <Content Include="js\build\gulpconfig.js" />
+    <Content Include="js\build\gulpfile.js" />
     <Content Include="js\components\AppController.react.js" />
     <Content Include="js\components\QuotesController.react.js" />
     <Content Include="js\components\Quotes.react.js" />
@@ -205,31 +209,33 @@
     <Content Include="js\components\SelectPoliciesTableRow.react.js" />
     <Content Include="js\constants\AppConstants.js" />
     <Content Include="js\dispatcher\AppDispatcher.js" />
+    <Content Include="js\mvc\bootstrap.js" />
+    <Content Include="js\mvc\bootstrap.min.js" />
+    <None Include="js\mvc\jquery-1.10.2.intellisense.js" />
+    <Content Include="js\mvc\jquery-1.10.2.js" />
+    <Content Include="js\mvc\jquery-1.10.2.min.js" />
+    <Content Include="js\mvc\jquery.signalR-2.2.0.js" />
+    <Content Include="js\mvc\jquery.signalR-2.2.0.min.js" />
+    <None Include="js\mvc\jquery.validate-vsdoc.js" />
+    <Content Include="js\mvc\jquery.validate.js" />
+    <Content Include="js\mvc\jquery.validate.min.js" />
+    <Content Include="js\mvc\jquery.validate.unobtrusive.js" />
+    <Content Include="js\mvc\jquery.validate.unobtrusive.min.js" />
+    <Content Include="js\mvc\knockout-2.2.1.debug.js" />
+    <Content Include="js\mvc\knockout-2.2.1.js" />
+    <Content Include="js\mvc\modernizr-2.6.2.js" />
+    <Content Include="js\mvc\respond.js" />
+    <Content Include="js\mvc\respond.min.js" />
+    <None Include="js\mvc\_references.js" />
     <Content Include="js\stores\QuoteStore.js" />
     <Content Include="js\stores\CustomerStore.js" />
     <Content Include="js\repositories\QuoteRepository.js" />
     <Content Include="js\repositories\CustomerRepository.js" />
-    <Content Include="js\bootstrap.js" />
-    <Content Include="js\bootstrap.min.js" />
     <Content Include="build\package.json" />
     <Content Include="Areas\RouteDebugger\Views\Web.config" />
     <Content Include="Areas\RouteDebugger\Views\RouteDebugger\Index.cshtml" />
-    <None Include="js\jquery-1.10.2.intellisense.js" />
-    <Content Include="js\jquery-1.10.2.js" />
-    <Content Include="js\jquery-1.10.2.min.js" />
-    <None Include="js\jquery.validate-vsdoc.js" />
-    <Content Include="js\jquery.signalR-2.2.0.js" />
-    <Content Include="js\jquery.signalR-2.2.0.min.js" />
-    <Content Include="js\jquery.validate.js" />
-    <Content Include="js\jquery.validate.min.js" />
-    <Content Include="js\jquery.validate.unobtrusive.js" />
-    <Content Include="js\jquery.validate.unobtrusive.min.js" />
-    <Content Include="js\knockout-2.2.1.debug.js" />
-    <Content Include="js\knockout-2.2.1.js" />
-    <Content Include="js\modernizr-2.6.2.js" />
-    <Content Include="js\respond.js" />
-    <Content Include="js\respond.min.js" />
-    <Content Include="js\_references.js" />
+    <Content Include="js\build\dist\bundle.js.map" />
+    <Content Include="js\build\hintoutput\jshint-output.log" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -241,7 +247,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="js\jquery-1.10.2.min.map" />
     <Content Include="Views\Shell\Get.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +259,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="js\package.json" />
+    <Content Include="js\mvc\jquery-1.10.2.min.map" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>

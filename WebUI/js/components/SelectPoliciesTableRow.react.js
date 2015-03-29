@@ -18,6 +18,8 @@ var SelectPoliciesTableRow = React.createClass({
             }
         };
     },
+
+
     handleSelected: function () {
 
         //update state on this row is selected so the ui reflectes it

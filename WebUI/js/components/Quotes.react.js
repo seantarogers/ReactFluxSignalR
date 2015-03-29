@@ -1,6 +1,5 @@
 ﻿var React = require('react/addons');
 var ReactTransitionGroup = React.addons.CSSTransitionGroup;
-
 var Quotes = React.createClass({
     displayName: "Quotes.react",
     handleBack: function () {

@@ -1,11 +1,11 @@
 ﻿//top level should pass state down - lower levels should only use props
+var sean = 'sean';
 var React = require('react');
 var SelectPoliciesController = require('../components/SelectPoliciesController.react');
 var QuotesController = require('../components/QuotesController.react');
 RouterMixin = require('react-mini-router').RouterMixin;
 var navigate = require('react-mini-router').navigate;
 var QuoteRepository = require('../repositories/QuoteRepository');
-
 var routes = {
     '/': 'selectPolicies',
     '/GetQuotes/': 'getQuotes'
@@ -35,3 +35,11 @@ var AppController = React.createClass({
 });
 
 module.exports = AppController;
+
+
+
+
+
+
+
+

@@ -9,19 +9,19 @@ namespace WebUI
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/js/jquery-{version}.js"));
+                        "~/js/mvc/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/js/jquery.validate*"));
+                        "~/js/mvc/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/js/modernizr-*"));
+                        "~/js/mvc/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/js/bootstrap.js",
-                      "~/js/respond.js"));
+                      "~/js/mvc/bootstrap.js",
+                      "~/js/mvc/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
