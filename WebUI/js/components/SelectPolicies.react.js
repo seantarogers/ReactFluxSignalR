@@ -1,7 +1,6 @@
 ﻿var React = require('react');
 var SelectPoliciesTableRow = require('../components/SelectPoliciesTableRow.react');
-//dasdasdasdasd
-//todo get initial data from api
+
 var SelectPolicies = React.createClass({
     displayName: "SelectPolicies.react",
     handleGetQuotes: function () {
@@ -27,7 +26,7 @@ var SelectPolicies = React.createClass({
                 }
             }.bind(this));
 
-            var totalRow = React.DOM.tr({ className: 'total' }, React.DOM.td({ colSpan: '7' }, "Total to be financed: £" + totalPremium));
+            var totalRow = React.createElement('tr', { className: 'total' }, React.DOM.td({ colSpan: '7' }, "Total to be financed: £" + totalPremium));
             rowComponents.push(totalRow);
         }
         return rowComponents;
@@ -35,7 +34,7 @@ var SelectPolicies = React.createClass({
     createButton: function () {
 
         if (this.policiesHaveBeenSelected()) {
-            return React.DOM.input({
+            return React.createElement('input', {
                 type: 'submit',
                 onClick: this.handleGetQuotes,
                 className: "btn btn-success pull-right",
@@ -49,10 +48,10 @@ var SelectPolicies = React.createClass({
         console.log("rendering selectpolicies.react customer name: " + this.props.customerName);
 
         return (
-        React.DOM.div({ className: 'container' },
-            React.DOM.div({ className: 'row' },
-                React.DOM.h2({ className: "bordered" }, "Select policies to finance"),
-                React.DOM.h4({ className: "muted" }, "Client: " + this.props.customerName),
+        React.createElement('div', { className: 'container' },
+            React.createElement('div', { className: 'row' },
+                React.createElement('h2', { className: "bordered" }, "Select policies to finance"),
+                React.createElement('h4', { className: "muted" }, "Client: " + this.props.customerName),
                 React.createElement("table", { className: 'table table-hover table-striped' },
                     React.createElement("thead", null,
                         React.createElement("tr", null,

@@ -27,7 +27,7 @@ function bundle() {
     runCodeQuality();
 
     if (config.isProduction) {
-
+        console.log('running update');
         return bundler.bundle()
             .pipe($.plumber())
             .pipe(source(config.bundleName))
@@ -36,6 +36,7 @@ function bundle() {
             .pipe(gulp.dest(config.bundleDestination));
     }
 
+    console.log('running update non prod');
     return bundler.bundle()
         .pipe($.plumber())
         .pipe(source(config.bundleName))

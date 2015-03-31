@@ -12,6 +12,7 @@ var routes = {
 };
 
 QuoteRepository.startConnection();
+console.log('out of signalr call');
 
 var AppController = React.createClass({
     displayName: "AppController.react",
@@ -26,12 +27,13 @@ var AppController = React.createClass({
     handleGetQuotes: function () {
         navigate('/GetQuotes/');
     },
-    selectPolicies: function () {        
+    selectPolicies: function () {
         return React.createElement(SelectPoliciesController, { handleGetQuotes: this.handleGetQuotes });
     },
     render: function () {
-        return React.DOM.div(null, this.renderCurrentRoute());
-    },   
+        console.log("got to render app controller");
+        return React.createElement('div', null, this.renderCurrentRoute());
+    },
 });
 
 module.exports = AppController;

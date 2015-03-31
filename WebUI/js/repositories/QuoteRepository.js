@@ -19,7 +19,7 @@ var QuoteRepository = {
             return true;
         }
 
-        console.log("called start signalr");
+        console.log("called start signalr connection");
         signalRConnection = $.hubConnection("http://localhost:64895/");
         localHubProxy = signalRConnection.createHubProxy("quoteHub");
 
