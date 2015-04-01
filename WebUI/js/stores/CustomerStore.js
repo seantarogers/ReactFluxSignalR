@@ -54,7 +54,7 @@ AppDispatcher.register(function (action) {
             CustomerStore.addSelectedPolicyToList(action.policy);
             CustomerStore.emitChange();
             break;
-        case AppConstants.RECEIVE_CUSTOMER:
+        case AppConstants.CUSTOMER_RETRIEVE_SUCCESS:
             CustomerStore.addCustomerToStorage(action.customer);
             CustomerStore.emitChange();
             break;
