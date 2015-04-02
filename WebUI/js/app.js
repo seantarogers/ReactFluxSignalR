@@ -1,4 +1,5 @@
-﻿var React = require('react/addons');
+﻿require('whatwg-fetch');
+var React = require('react/addons');
 var AppController = require('./components/AppController.react');
 var ErrorsComponent = require('./components/Errors.react');
 

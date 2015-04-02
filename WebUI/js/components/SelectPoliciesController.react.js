@@ -2,13 +2,13 @@
 var React = require('react');
 var SelectPolicies = require('../components/SelectPolicies.react');
 var CustomerStore = require('../stores/CustomerStore');
-var CustomerRepository = require('../repositories/CustomerRepository');
+var CustomerActions = require('../actions/CustomerActions');
 
 var SelectPoliciesController = React.createClass({
     displayName: "SelectPoliciesController.react",
     componentWillMount: function () {
         //will trigger a dispatch when we hear back from the server api call
-        CustomerRepository.getCustomer();
+        CustomerActions.retrieveCustomer();
         return true;
     },
     handleGetQuotes: function () {

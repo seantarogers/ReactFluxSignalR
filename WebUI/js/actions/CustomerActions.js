@@ -1,5 +1,6 @@
 ﻿var AppDispatcher = require('../dispatcher/AppDispatcher');
 var AppConstants = require('../constants/AppConstants');
+var CustomerRepository = require('../repositories/CustomerRepository');
 
 function dispatch(action) {
     AppDispatcher.dispatch(action);
@@ -8,13 +9,14 @@ function dispatch(action) {
 var CustomerActions = {
 
     retrieveCustomer: function () {
-        var action = {
-            actionType: AppConstants.CUSTOMER_RETRIEVE,
-            customer: customer
-        };
-
-        dispatch(action);
+        self = this;
+        CustomerRepository.getCustomer(function (err, data) {
+            if (err)
+                self.retrieveCustomerFail(err);
+            self.retrieveCustomerSuccess(data);
+        });
     },
+
     retrieveCustomerSuccess: function (customer) {
 
         var action = {

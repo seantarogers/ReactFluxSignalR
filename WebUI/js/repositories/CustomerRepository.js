@@ -1,16 +1,14 @@
-﻿var CustomerAction = require('../actions/CustomerActions');
-require('whatwg-fetch');
+﻿
+function status(response) {
+    if (response.status >= 200 && response.status < 300) {
+        return Promise.resolve(response);
+    } else {
+        return Promise.reject(new Error(response.statusText));
+    }
+}
 
 var CustomerRepository = {
-    getCustomer: function () {
-
-        function status(response) {
-            if (response.status >= 200 && response.status < 300) {
-                return Promise.resolve(response);
-            } else {
-                return Promise.reject(new Error(response.statusText));
-            }
-        }
+    getCustomer: function (callback) {
 
         fetch('/api/customer')
             .then(status)
@@ -18,10 +16,10 @@ var CustomerRepository = {
                 return response.json();
             })
             .then(function (json) {
-                CustomerAction.retrieveCustomerSuccess(json);
+                return callback(null, json);
             })
             .catch(function (e) {
-                CustomerAction.retrieveCustomerFail(e);
+                return callback(e, null);
             });
 	}
 }

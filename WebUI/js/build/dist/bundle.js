@@ -1,4 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+require('whatwg-fetch');
 var React = require('react/addons');
 var AppController = require('./components/AppController.react');
 var ErrorsComponent = require('./components/Errors.react');
@@ -15,9 +16,10 @@ React.render(
 
 //React.render(React.createElement(AppController, { name: "John" }), document.getElementById('react'));
 
-},{"./components/AppController.react":5,"./components/Errors.react":7,"react/addons":29}],2:[function(require,module,exports){
+},{"./components/AppController.react":5,"./components/Errors.react":7,"react/addons":29,"whatwg-fetch":202}],2:[function(require,module,exports){
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var AppConstants = require('../constants/AppConstants');
+var CustomerRepository = require('../repositories/CustomerRepository');
 
 function dispatch(action) {
     AppDispatcher.dispatch(action);
@@ -26,13 +28,14 @@ function dispatch(action) {
 var CustomerActions = {
 
     retrieveCustomer: function () {
-        var action = {
-            actionType: AppConstants.CUSTOMER_RETRIEVE,
-            customer: customer
-        };
-
-        dispatch(action);
+        self = this;
+        CustomerRepository.getCustomer(function (err, data) {
+            if (err)
+                self.retrieveCustomerFail(err);
+            self.retrieveCustomerSuccess(data);
+        });
     },
+
     retrieveCustomerSuccess: function (customer) {
 
         var action = {
@@ -55,7 +58,7 @@ var CustomerActions = {
 
 module.exports = CustomerActions;
 
-},{"../constants/AppConstants":13,"../dispatcher/AppDispatcher":14}],3:[function(require,module,exports){
+},{"../constants/AppConstants":13,"../dispatcher/AppDispatcher":14,"../repositories/CustomerRepository":203}],3:[function(require,module,exports){
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var AppConstants = require('../constants/AppConstants');
 
@@ -417,13 +420,13 @@ module.exports = SelectPolicies;
 var React = require('react');
 var SelectPolicies = require('../components/SelectPolicies.react');
 var CustomerStore = require('../stores/CustomerStore');
-var CustomerRepository = require('../repositories/CustomerRepository');
+var CustomerActions = require('../actions/CustomerActions');
 
 var SelectPoliciesController = React.createClass({
     displayName: "SelectPoliciesController.react",
     componentWillMount: function () {
         //will trigger a dispatch when we hear back from the server api call
-        CustomerRepository.getCustomer();
+        CustomerActions.retrieveCustomer();
         return true;
     },
     handleGetQuotes: function () {
@@ -470,7 +473,7 @@ var SelectPoliciesController = React.createClass({
 
 module.exports = SelectPoliciesController;
 
-},{"../components/SelectPolicies.react":10,"../repositories/CustomerRepository":203,"../stores/CustomerStore":205,"react":201}],12:[function(require,module,exports){
+},{"../actions/CustomerActions":2,"../components/SelectPolicies.react":10,"../stores/CustomerStore":205,"react":201}],12:[function(require,module,exports){
 
 var React = require('react');
 var Actions = require('../actions/SelectPoliciesActions');
@@ -23891,19 +23894,20 @@ module.exports = require('./lib/React');
 })();
 
 },{}],203:[function(require,module,exports){
-var CustomerAction = require('../actions/CustomerActions');
-require('whatwg-fetch');
+
+function status(response) {
+    console.log('status');
+    console.log(response);
+    console.log(Promise);
+    if (response.status >= 200 && response.status < 300) {
+        return Promise.resolve(response);
+    } else {
+        return Promise.reject(new Error(response.statusText));
+    }
+}
 
 var CustomerRepository = {
-    getCustomer: function () {
-
-        function status(response) {
-            if (response.status >= 200 && response.status < 300) {
-                return Promise.resolve(response);
-            } else {
-                return Promise.reject(new Error(response.statusText));
-            }
-        }
+    getCustomer: function (callback) {
 
         fetch('/api/customer')
             .then(status)
@@ -23911,10 +23915,10 @@ var CustomerRepository = {
                 return response.json();
             })
             .then(function (json) {
-                CustomerAction.retrieveCustomerSuccess(json);
+                return callback(null, json);
             })
             .catch(function (e) {
-                CustomerAction.retrieveCustomerFail(e);
+                return callback(e, null);
             });
 	}
 }
@@ -23922,7 +23926,7 @@ var CustomerRepository = {
 module.exports = CustomerRepository;
 
 
-},{"../actions/CustomerActions":2,"whatwg-fetch":202}],204:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 var Actions = require('../actions/QuoteActions');
 
 var signalRConnection;
