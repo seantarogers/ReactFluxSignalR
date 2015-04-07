@@ -1,5 +1,7 @@
 ﻿jest.dontMock('../CustomerActions');
 jest.dontMock('../../constants/AppConstants');
+// If you want to use AppConstants you have to not mock keymirror,
+// this took me a while to notice for the second time maybe think about removing it
 jest.dontMock('keymirror');
 
 describe('CustomerStore', function() {

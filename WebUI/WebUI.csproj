@@ -195,6 +195,7 @@
     <Content Include="js\actions\CustomerActions.js" />
     <Content Include="js\actions\QuoteActions.js" />
     <Content Include="js\actions\SelectPoliciesActions.js" />
+    <Content Include="js\actions\__tests__\QuoteActions-tests.js" />
     <Content Include="js\actions\__tests__\CustomerActions-tests.js" />
     <Content Include="js\app.js" />
     <Content Include="js\build\.jscsrc" />
