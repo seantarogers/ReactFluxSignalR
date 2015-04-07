@@ -4,27 +4,29 @@ var AppConstants = require('../constants/AppConstants');
 var assign = require('object-assign');
 
 var customer;
-localStorage.customer = customer;
+localStorage.setItem('customer', customer);
 
 var CustomerStore = assign({}, EventEmitter.prototype, {
 
     retrieveCustomerFromStorage: function () {
 
-        var customer = localStorage.customer;
+        var customer = localStorage.getItem('customer');
         if (customer === undefined || customer === "undefined") {
             return customer;
         }
         return JSON.parse(customer);
     },
     addCustomerToStorage: function (customer) {
-        localStorage.customer = JSON.stringify(customer);
+        localStorage.setItem('customer', JSON.stringify(customer));
     },
     updatePolicySelectedInStorage: function(policy) {
         var customer = this.retrieveCustomerFromStorage();
-        $.each(customer.policies, function () {
-            if (this.id === policy.id) {
-                this.selected = policy.selected;
+
+        customer.policies.forEach(function (item) {
+            if (item.id === policy.id) {
+                item.selected = policy.selected;
             }
+            return item;
         });
         this.addCustomerToStorage(customer);
     },
