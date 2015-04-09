@@ -195,6 +195,8 @@
     <Content Include="js\actions\CustomerActions.js" />
     <Content Include="js\actions\QuoteActions.js" />
     <Content Include="js\actions\SelectPoliciesActions.js" />
+    <Content Include="js\actions\__tests__\QuoteActions-tests.js" />
+    <Content Include="js\actions\__tests__\CustomerActions-tests.js" />
     <Content Include="js\app.js" />
     <Content Include="js\build\.jscsrc" />
     <Content Include="js\build\.jshintrc" />
@@ -209,6 +211,8 @@
     <Content Include="js\components\SelectPoliciesTableRow.react.js" />
     <Content Include="js\constants\AppConstants.js" />
     <Content Include="js\dispatcher\AppDispatcher.js" />
+    <Content Include="js\jest-setupEnvScriptFile.js" />
+    <Content Include="js\jest-setupTestFrameworkScriptFile.js" />
     <Content Include="js\mvc\bootstrap.js" />
     <Content Include="js\mvc\bootstrap.min.js" />
     <None Include="js\mvc\jquery-1.10.2.intellisense.js" />
@@ -236,6 +240,8 @@
     <Content Include="Areas\RouteDebugger\Views\RouteDebugger\Index.cshtml" />
     <Content Include="js\build\dist\bundle.js.map" />
     <Content Include="js\build\hintoutput\jshint-output.log" />
+    <Content Include="js\stores\__tests__\CustomerStore-tests.js" />
+    <Content Include="js\stores\__tests__\QuoteStore-tests.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
