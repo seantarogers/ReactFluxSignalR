@@ -204,6 +204,8 @@
     <Content Include="js\build\gulpconfig.js" />
     <Content Include="js\build\gulpfile.js" />
     <Content Include="js\components\AppController.react.js" />
+    <Content Include="js\components\Error.react.js" />
+    <Content Include="js\components\Errors.react.js" />
     <Content Include="js\components\QuotesController.react.js" />
     <Content Include="js\components\Quotes.react.js" />
     <Content Include="js\components\SelectPolicies.react.js" />
@@ -231,6 +233,7 @@
     <Content Include="js\mvc\respond.js" />
     <Content Include="js\mvc\respond.min.js" />
     <None Include="js\mvc\_references.js" />
+    <Content Include="js\stores\ErrorStore.js" />
     <Content Include="js\stores\QuoteStore.js" />
     <Content Include="js\stores\CustomerStore.js" />
     <Content Include="js\repositories\QuoteRepository.js" />

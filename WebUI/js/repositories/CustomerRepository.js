@@ -1,19 +1,26 @@
-﻿var Actions = require('../actions/CustomerActions');
+﻿
+function status(response) {
+    if (response.status >= 200 && response.status < 300) {
+        return Promise.resolve(response);
+    } else {
+        return Promise.reject(new Error(response.statusText));
+    }
+}
 
 var CustomerRepository = {
+    getCustomer: function (callback) {
 
-	getCustomer: function() {
-		var xhr = new XMLHttpRequest();
-		xhr.open("get", "/api/customer", true);
-		xhr.onload = function () {
-
-			var customer = JSON.parse(xhr.responseText);
-			console.log(("getCustomer has heard back from the API"));
-			console.log(("creating an action to dispatch"));
-		    Actions.receiveCustomer(customer);
-
-		}.bind(this);
-		xhr.send();
+        fetch('/api/customer')
+            .then(status)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (json) {
+                return callback(null, json);
+            })
+            .catch(function (e) {
+                return callback(e, null);
+            });
 	}
 }
 

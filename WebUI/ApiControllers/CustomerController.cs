@@ -1,4 +1,7 @@
-﻿namespace WebUI.ApiControllers
+﻿using System.Net;
+using System.Net.Http;
+
+namespace WebUI.ApiControllers
 {
     using System;
     using System.Collections.Generic;
@@ -16,6 +19,17 @@
             var customer = new CustomerDto { CustomerName = "sean", Policies = policies };
 
             return this.Ok(customer);
+        }
+
+        [Route("{customerId}")]
+        public IHttpActionResult GetErrorExample()
+        {
+            var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
+            {
+                Content = new StringContent(string.Format("Example of an error message using HttpResponseException")),
+                ReasonPhrase = "Customer ID Not Found"
+            };
+            throw new HttpResponseException(resp);  
         }
 
         private static List<PolicyDto> GetPoliciesFromDatabase()

@@ -3,7 +3,9 @@
 module.exports = keyMirror({
     SELECT_POLICY: null,
     SELECT_QUOTE: null,
-    RECEIVE_CUSTOMER: null,
+    CUSTOMER_RETRIEVE: null,
+    CUSTOMER_RETRIEVE_SUCCESS: null,
+    CUSTOMER_RETRIEVE_FAIL: null,
     RECEIVE_QUOTE_PROGRESS: null,
     RECEIVE_QUOTE_MESSAGES: null,
     RECEIVE_QUOTE_RESPONSE: null,
